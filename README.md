@@ -555,3 +555,20 @@
 		        return obs.size();
 		    }
 		}
+
+### Observable中有两个重载的方法
+
+
+	一个是不带参数的notifyObservers(),一个是带参数的notifyObservers(Object arg)
+	先说那个带参数的notifyObservers(Object arg):
+	这个参数Object arg 其实就是 Observer接口中的update(Observable o, Object arg)方法中的第二个参数 
+	其实就是一个数据对象,也就是通知观察者,改变的数据对象是什么
+	这就是一种PUSH的方法,由主题主动的PUSH需要改变的数据对象给观察者
+
+
+	
+	第二种不带参数的notifyObservers(),当调用它的时候, 传递一个null的数据对象给观察者.
+	其实也就是说,观察者需要改变什么数据,是需要观察者自己到主题那里去pull.
+	也就是说,通知你主题发生了变化,但是具体需要什么变化的数据,由你自己决定.
+
+
