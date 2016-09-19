@@ -42,9 +42,9 @@ public class WeatherObservable extends Observable {
 		 * 以下2选一
 		 */
 		//调用无参数的方法，使用拉模型
-		//notifyObservers();
+		notifyObservers();
 		//调用有参数的方法，被观察者推送
-		notifyObservers(this);
+		//notifyObservers(this);
 		
 	}
 
